@@ -35,8 +35,8 @@ class Orders extends Component {
                                     price={order.totalPrice}
                                     orderData={order.orderData}
                                     orderDate={order.createdAt}
-                                    key={order._id}
-                                    clicked={()=>this.deleteOrderHandler(order._id)}
+                                    key={order.id}
+                                    clicked={()=>this.deleteOrderHandler(order.id)}
                                 />
                             })
                         }

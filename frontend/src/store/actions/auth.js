@@ -39,9 +39,9 @@ export const auth = (email, password, isSignUp) => {
             email: email,
             password: password
         };
-        let url = 'http://localhost:3003/auth';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCwexXImK-Nmg_K8gpL74HB-sOv9xpwVPM\n';
         if (!isSignUp) {
-            url = 'http://localhost:3003/login'
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCwexXImK-Nmg_K8gpL74HB-sOv9xpwVPM\n'
         }
         axios.post(url, authData)
             .then(response => {

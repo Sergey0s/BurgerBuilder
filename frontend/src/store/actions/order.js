@@ -26,11 +26,13 @@ export const purchaseBurgerStart = () => {
 export const purchaseBurger = (orderSummary, token) => {
     return dispatch => {
         dispatch(purchaseBurgerStart());
-        axios.post('http://localhost:3003/orders', {token, orderSummary})
+        axios.post('/orders.json', orderSummary)
             .then(response => {
+                console.log(response)
                 dispatch(purchaseBurgerSuccess(response.data.name, orderSummary))
             })
             .catch(error => {
+                console.log(error)
                 dispatch(purchaseBurgerFail(error))
             })
     };
@@ -64,7 +66,7 @@ export const fetchOrdersStart = () => {
 export const fetchOrders = (token, userId) => {
     return dispatch => {
         dispatch(fetchOrdersStart());
-        axios.get('http://localhost:3003/orders?access_token='+ token)
+        axios.get('https://react-my-burger-3cb3b.firebaseio.com/orders.json')
             .then(res => {
                 const fetchedOrders = [];
                 for (let key in res.data) {
