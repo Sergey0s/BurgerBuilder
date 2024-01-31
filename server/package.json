@@ -19,7 +19,7 @@
     "dotenv": "^8.2.0",
     "hapi-auth-bearer-token": "^6.1.2",
     "hapi-auth-multiple-strategies": "^3.0.0",
-    "mongoose": "^5.7.14",
+    "mongoose": "^5.13.20",
     "uuid": "^3.3.3"
   },
   "devDependencies": {}
